@@ -1,0 +1,11 @@
+const article = require("../article");
+
+/**
+ * @param { import("knex").Knex } knex
+ * @returns { Promise<void> } 
+ */
+exports.seed = async function(knex) {
+  // Deletes ALL existing entries
+  await knex('article').del()
+  await knex('article').insert(article);
+};
